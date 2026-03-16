@@ -1,0 +1,520 @@
+<!-- wp:html -->
+<style>
+    .guida-taglie-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .guida-taglie-tab {
+        padding: 8px 24px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 14px;
+        color: #555;
+        background: #f5f5f5;
+        transition: all .15s;
+        font-family: inherit;
+    }
+
+    .guida-taglie-tab.active {
+        background: #111;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    .guida-taglie-section {
+        display: none;
+    }
+
+    .guida-taglie-section.active {
+        display: block;
+    }
+
+    .guida-taglie-how-to {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 32px;
+        align-items: start;
+    }
+
+    @media (max-width: 600px) {
+        .guida-taglie-how-to {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .guida-taglie-how-to h3 {
+        font-size: 16px;
+        margin: 0 0 8px;
+    }
+
+    .guida-taglie-how-to p {
+        font-size: 14px;
+        color: #555;
+        margin: 0 0 20px;
+        line-height: 1.6;
+    }
+
+    .guida-taglie-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .guida-taglie-table thead th {
+        background: #f5f5f5;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 13px;
+        color: #444;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .guida-taglie-table tbody td {
+        padding: 9px 14px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #222;
+    }
+
+    .guida-taglie-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .guida-taglie-table tbody tr:hover td {
+        background: #fafafa;
+    }
+
+    .guida-taglie-note {
+        font-size: 13px;
+        color: #777;
+        margin-top: 12px;
+        font-style: italic;
+    }
+</style>
+
+<div class="guida-taglie-wrapper">
+    <div class="guida-taglie-tabs">
+        <button class="guida-taglie-tab active" onclick="guidaTaglie('uomo', this)">Uomo</button>
+        <button class="guida-taglie-tab" onclick="guidaTaglie('donna', this)">Donna</button>
+        <button class="guida-taglie-tab" onclick="guidaTaglie('kids', this)">Kids</button>
+    </div>
+
+    <!-- ===== UOMO ===== -->
+    <div class="guida-taglie-section active" id="guida-uomo">
+        <div class="guida-taglie-how-to">
+            <div>
+                <figure class="wp-block-image size-full">
+                    <img src="" alt="Come misurare il piede uomo" />
+                </figure>
+            </div>
+            <div>
+                <h3>1. Misura la lunghezza del piede</h3>
+                <p>Appoggia un foglio di carta su una superficie dura contro un muro. Mettiti in piedi sul foglio con il
+                    tallone a contatto con il muro. Segna con una penna il punto più lungo del piede (di solito l'alluce
+                    o il secondo dito). Misura la distanza dal bordo del foglio al segno in centimetri.</p>
+                <h3>2. Misura la larghezza del piede</h3>
+                <p>Sempre in piedi sul foglio, segna i due punti più larghi del piede su entrambi i lati. Misura la
+                    distanza tra i due segni. Se ti trovi tra due taglie, ti consigliamo di scegliere la mezza taglia
+                    superiore per una vestibilità più comoda, soprattutto se hai un piede largo.</p>
+            </div>
+        </div>
+        <table class="guida-taglie-table">
+            <thead>
+                <tr>
+                    <th>EU</th>
+                    <th>US</th>
+                    <th>UK</th>
+                    <th>Lunghezza piede (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>39</td>
+                    <td>6.5</td>
+                    <td>6</td>
+                    <td>24.5</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>7</td>
+                    <td>6.5</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>40.5</td>
+                    <td>7.5</td>
+                    <td>7</td>
+                    <td>25.5</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>8</td>
+                    <td>7.5</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>8.5</td>
+                    <td>8</td>
+                    <td>26.5</td>
+                </tr>
+                <tr>
+                    <td>42.5</td>
+                    <td>9</td>
+                    <td>8.5</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>9.5</td>
+                    <td>9</td>
+                    <td>27.5</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>10</td>
+                    <td>9.5</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>44.5</td>
+                    <td>10.5</td>
+                    <td>10</td>
+                    <td>28.5</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>11</td>
+                    <td>10.5</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>45.5</td>
+                    <td>11.5</td>
+                    <td>11</td>
+                    <td>29.5</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>12</td>
+                    <td>11.5</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>12.5</td>
+                    <td>12</td>
+                    <td>30.5</td>
+                </tr>
+                <tr>
+                    <td>47.5</td>
+                    <td>13</td>
+                    <td>12.5</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>48.5</td>
+                    <td>14</td>
+                    <td>13.5</td>
+                    <td>32</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="guida-taglie-note">Se sei tra due taglie, ti consigliamo di scegliere la taglia superiore per una
+            vestibilità più comoda.</p>
+    </div>
+
+    <!-- ===== DONNA ===== -->
+    <div class="guida-taglie-section" id="guida-donna">
+        <div class="guida-taglie-how-to">
+            <div>
+                <figure class="wp-block-image size-full">
+                    <img src="" alt="Come misurare il piede donna" />
+                </figure>
+            </div>
+            <div>
+                <h3>1. Misura la lunghezza del piede</h3>
+                <p>Appoggia un foglio di carta su una superficie dura contro un muro. Posiziona il piede con il tallone
+                    a contatto con il muro. Segna con una penna il punto più lungo del piede e misura la distanza in
+                    centimetri.</p>
+                <h3>2. Misura la larghezza del piede</h3>
+                <p>Segna i due punti più larghi del piede su entrambi i lati e misura la distanza tra i due segni. Se ti
+                    trovi tra due taglie, opta per la mezza taglia superiore, soprattutto se hai un piede largo o un
+                    collo del piede pronunciato.</p>
+            </div>
+        </div>
+        <table class="guida-taglie-table">
+            <thead>
+                <tr>
+                    <th>EU</th>
+                    <th>US</th>
+                    <th>UK</th>
+                    <th>Lunghezza piede (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>35</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>35.5</td>
+                    <td>5.5</td>
+                    <td>3.5</td>
+                    <td>22.5</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>36.5</td>
+                    <td>6.5</td>
+                    <td>4.5</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>23.5</td>
+                </tr>
+                <tr>
+                    <td>37.5</td>
+                    <td>7.5</td>
+                    <td>5.5</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>24.5</td>
+                </tr>
+                <tr>
+                    <td>38.5</td>
+                    <td>8.5</td>
+                    <td>6.5</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>9.5</td>
+                    <td>7.5</td>
+                    <td>25.5</td>
+                </tr>
+                <tr>
+                    <td>40.5</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>10.5</td>
+                    <td>8.5</td>
+                    <td>26.5</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>27</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="guida-taglie-note">Se sei tra due taglie, ti consigliamo di scegliere la taglia superiore per una
+            vestibilità più comoda.</p>
+    </div>
+
+    <!-- ===== KIDS ===== -->
+    <div class="guida-taglie-section" id="guida-kids">
+        <div class="guida-taglie-how-to">
+            <div>
+                <figure class="wp-block-image size-full">
+                    <img src="" alt="Come misurare il piede bambino" />
+                </figure>
+            </div>
+            <div>
+                <h3>1. Misura la lunghezza del piede</h3>
+                <p>Fai appoggiare il bambino su un foglio di carta contro un muro, con il tallone a contatto con la
+                    parete. Segna con una penna il punto più lungo del piede (di solito l'alluce o il secondo dito) e
+                    misura la distanza in centimetri.</p>
+                <h3>2. Consiglio per i bambini</h3>
+                <p>Il piede dei bambini cresce rapidamente. Lascia sempre 1–1,5 cm di spazio tra il dito più lungo e la
+                    punta della scarpa per una vestibilità confortevole e duratura. Se sei tra due taglie, scegli sempre
+                    la taglia più grande.</p>
+            </div>
+        </div>
+        <table class="guida-taglie-table">
+            <thead>
+                <tr>
+                    <th>EU</th>
+                    <th>US</th>
+                    <th>UK</th>
+                    <th>Lunghezza piede (cm)</th>
+                    <th>Età indicativa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>19</td>
+                    <td>3.5</td>
+                    <td>3</td>
+                    <td>11.5</td>
+                    <td>12–18 mesi</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>4</td>
+                    <td>3.5</td>
+                    <td>12</td>
+                    <td>18–24 mesi</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>13</td>
+                    <td>2 anni</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>6</td>
+                    <td>4.5</td>
+                    <td>13.5</td>
+                    <td>2–3 anni</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>7</td>
+                    <td>5.5</td>
+                    <td>14.5</td>
+                    <td>3 anni</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>15</td>
+                    <td>3–4 anni</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>8.5</td>
+                    <td>7</td>
+                    <td>16</td>
+                    <td>4–5 anni</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>9</td>
+                    <td>7.5</td>
+                    <td>16.5</td>
+                    <td>5 anni</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>10</td>
+                    <td>8.5</td>
+                    <td>17</td>
+                    <td>5–6 anni</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>10.5</td>
+                    <td>9</td>
+                    <td>17.5</td>
+                    <td>6–7 anni</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>18.5</td>
+                    <td>7–8 anni</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>12</td>
+                    <td>10.5</td>
+                    <td>19</td>
+                    <td>8 anni</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>13</td>
+                    <td>11.5</td>
+                    <td>19.5</td>
+                    <td>8–9 anni</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>13.5</td>
+                    <td>12</td>
+                    <td>20.5</td>
+                    <td>9–10 anni</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>1</td>
+                    <td>13</td>
+                    <td>21</td>
+                    <td>10–11 anni</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>2</td>
+                    <td>1.5</td>
+                    <td>21.5</td>
+                    <td>11 anni</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>3</td>
+                    <td>2.5</td>
+                    <td>22</td>
+                    <td>11–12 anni</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>4</td>
+                    <td>3.5</td>
+                    <td>22.5</td>
+                    <td>12 anni</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="guida-taglie-note">L'età è puramente indicativa: misura sempre il piede del bambino prima di ogni
+            acquisto.</p>
+    </div>
+</div>
+
+<script>
+    function guidaTaglie(id, btn) {
+        document.querySelectorAll('.guida-taglie-section').forEach(function (s) {
+            s.classList.remove('active');
+        });
+        document.querySelectorAll('.guida-taglie-tab').forEach(function (t) {
+            t.classList.remove('active');
+        });
+        document.getElementById('guida-' + id).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+<!-- /wp:html -->

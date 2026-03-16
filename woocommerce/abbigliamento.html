@@ -1,0 +1,907 @@
+<!-- wp:html -->
+<style>
+    .gt-wrap * {
+        box-sizing: border-box;
+    }
+
+    .gt-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .gt-tab {
+        padding: 8px 24px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 14px;
+        color: #555;
+        background: #f5f5f5;
+        transition: all .15s;
+        font-family: inherit;
+    }
+
+    .gt-tab.active {
+        background: #111;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    .gt-section {
+        display: none;
+    }
+
+    .gt-section.active {
+        display: block;
+    }
+
+    /* Subtab row (categorie) */
+    .gt-subtabs {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .gt-subtab {
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 13px;
+        color: #555;
+        background: #fff;
+        transition: all .15s;
+        font-family: inherit;
+    }
+
+    .gt-subtab.active {
+        background: #111;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    .gt-cat {
+        display: none;
+    }
+
+    .gt-cat.active {
+        display: block;
+    }
+
+    /* How-to grid */
+    .gt-how-to {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 28px;
+        align-items: start;
+    }
+
+    @media (max-width: 640px) {
+        .gt-how-to {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .gt-how-to h3 {
+        font-size: 15px;
+        margin: 0 0 6px;
+    }
+
+    .gt-how-to p {
+        font-size: 14px;
+        color: #555;
+        margin: 0 0 16px;
+        line-height: 1.6;
+    }
+
+    /* Table */
+    .gt-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .gt-table thead th {
+        background: #f5f5f5;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 13px;
+        color: #444;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .gt-table tbody td {
+        padding: 9px 14px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #222;
+    }
+
+    .gt-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .gt-table tbody tr:hover td {
+        background: #fafafa;
+    }
+
+    .gt-note {
+        font-size: 13px;
+        color: #777;
+        margin-top: 10px;
+        font-style: italic;
+    }
+</style>
+
+<div class="gt-wrap">
+
+    <!-- MAIN TABS: Uomo / Donna / Kids -->
+    <div class="gt-tabs">
+        <button class="gt-tab active" onclick="gtMain('uomo',this)">Uomo</button>
+        <button class="gt-tab" onclick="gtMain('donna',this)">Donna</button>
+        <button class="gt-tab" onclick="gtMain('kids',this)">Kids</button>
+    </div>
+
+    <!-- ==============================
+       UOMO
+  =============================== -->
+    <div class="gt-section active" id="gt-uomo">
+        <div class="gt-subtabs">
+            <button class="gt-subtab active" onclick="gtSub('uomo','top',this)">Top / T-shirt / Felpe</button>
+            <button class="gt-subtab" onclick="gtSub('uomo','pantaloni',this)">Pantaloni / Jeans</button>
+            <button class="gt-subtab" onclick="gtSub('uomo','giacche',this)">Giacche / Capispalla</button>
+        </div>
+
+        <!-- Uomo: Top -->
+        <div class="gt-cat active" id="gt-uomo-top">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare petto uomo" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura il petto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto, tenendo il metro orizzontale e le braccia
+                        rilassate lungo i fianchi.</p>
+                    <h3>2. Misura la vita</h3>
+                    <p>Misura la circonferenza nella parte più stretta del busto, di solito appena sopra l'ombelico.
+                        Tieni il metro aderente ma non stretto.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Petto (cm)</th>
+                        <th>Vita (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS</td>
+                        <td>82–87</td>
+                        <td>70–75</td>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>88–93</td>
+                        <td>76–81</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>94–99</td>
+                        <td>82–87</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>100–105</td>
+                        <td>88–93</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>106–111</td>
+                        <td>94–99</td>
+                    </tr>
+                    <tr>
+                        <td>XXL</td>
+                        <td>112–117</td>
+                        <td>100–105</td>
+                    </tr>
+                    <tr>
+                        <td>3XL</td>
+                        <td>118–123</td>
+                        <td>106–111</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Se sei tra due taglie, ti consigliamo di scegliere la taglia superiore.</p>
+        </div>
+
+        <!-- Uomo: Pantaloni -->
+        <div class="gt-cat" id="gt-uomo-pantaloni">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare vita e gamba uomo" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la vita</h3>
+                    <p>Misura la circonferenza della vita nel punto in cui normalmente indossi i pantaloni (di solito
+                        appena sotto l'ombelico), tenendo il metro aderente ma non stretto.</p>
+                    <h3>2. Misura la lunghezza interna gamba</h3>
+                    <p>Misura dall'inguine fino alla caviglia lungo la parte interna della gamba. Puoi usare un paio di
+                        pantaloni che ti calzano bene come riferimento.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                        <th>Lunghezza gamba (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 44</td>
+                        <td>70–74</td>
+                        <td>88–92</td>
+                        <td>76–78</td>
+                    </tr>
+                    <tr>
+                        <td>S / 46</td>
+                        <td>75–79</td>
+                        <td>93–97</td>
+                        <td>78–80</td>
+                    </tr>
+                    <tr>
+                        <td>M / 48</td>
+                        <td>80–84</td>
+                        <td>98–102</td>
+                        <td>80–82</td>
+                    </tr>
+                    <tr>
+                        <td>L / 50</td>
+                        <td>85–89</td>
+                        <td>103–107</td>
+                        <td>82–84</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 52</td>
+                        <td>90–95</td>
+                        <td>108–112</td>
+                        <td>84–86</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 54</td>
+                        <td>96–101</td>
+                        <td>113–117</td>
+                        <td>84–86</td>
+                    </tr>
+                    <tr>
+                        <td>3XL / 56</td>
+                        <td>102–107</td>
+                        <td>118–122</td>
+                        <td>84–86</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Per i jeans, la lunghezza gamba è indicativa: verifica sempre la misura dell'inseam in
+                pollici indicata sull'etichetta.</p>
+        </div>
+
+        <!-- Uomo: Giacche -->
+        <div class="gt-cat" id="gt-uomo-giacche">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per giacche uomo" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura il petto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto, sopra l'abbigliamento leggero che
+                        indosseresti sotto la giacca, con le braccia rilassate.</p>
+                    <h3>2. Misura le spalle</h3>
+                    <p>Misura da una spalla all'altra, attraverso il punto più largo del dorso. Questa misura è
+                        fondamentale per una buona vestibilità delle giacche strutturate.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Petto (cm)</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 44</td>
+                        <td>82–87</td>
+                        <td>70–75</td>
+                        <td>88–93</td>
+                    </tr>
+                    <tr>
+                        <td>S / 46</td>
+                        <td>88–93</td>
+                        <td>76–81</td>
+                        <td>94–99</td>
+                    </tr>
+                    <tr>
+                        <td>M / 48</td>
+                        <td>94–99</td>
+                        <td>82–87</td>
+                        <td>100–105</td>
+                    </tr>
+                    <tr>
+                        <td>L / 50</td>
+                        <td>100–105</td>
+                        <td>88–93</td>
+                        <td>106–111</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 52</td>
+                        <td>106–111</td>
+                        <td>94–99</td>
+                        <td>112–117</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 54</td>
+                        <td>112–117</td>
+                        <td>100–105</td>
+                        <td>118–123</td>
+                    </tr>
+                    <tr>
+                        <td>3XL / 56</td>
+                        <td>118–123</td>
+                        <td>106–111</td>
+                        <td>124–129</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Per i capispalla imbottiti, considera di salire di mezza taglia per indossarli
+                comodamente sopra una felpa.</p>
+        </div>
+    </div>
+
+    <!-- ==============================
+       DONNA
+  =============================== -->
+    <div class="gt-section" id="gt-donna">
+        <div class="gt-subtabs">
+            <button class="gt-subtab active" onclick="gtSub('donna','top',this)">Top / T-shirt / Felpe</button>
+            <button class="gt-subtab" onclick="gtSub('donna','pantaloni',this)">Pantaloni / Jeans</button>
+            <button class="gt-subtab" onclick="gtSub('donna','giacche',this)">Giacche / Capispalla</button>
+        </div>
+
+        <!-- Donna: Top -->
+        <div class="gt-cat active" id="gt-donna-top">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare busto donna" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura il busto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto, tenendolo orizzontale e aderente ma non
+                        stretto. Tieni le braccia rilassate lungo i fianchi.</p>
+                    <h3>2. Misura la vita</h3>
+                    <p>Misura la circonferenza nel punto più stretto del busto, di solito appena sopra l'ombelico. Non
+                        trattenere il respiro durante la misurazione.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Busto (cm)</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 34</td>
+                        <td>78–82</td>
+                        <td>60–64</td>
+                        <td>86–90</td>
+                    </tr>
+                    <tr>
+                        <td>S / 36</td>
+                        <td>83–87</td>
+                        <td>65–69</td>
+                        <td>91–95</td>
+                    </tr>
+                    <tr>
+                        <td>M / 38</td>
+                        <td>88–92</td>
+                        <td>70–74</td>
+                        <td>96–100</td>
+                    </tr>
+                    <tr>
+                        <td>L / 40</td>
+                        <td>93–97</td>
+                        <td>75–79</td>
+                        <td>101–105</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 42</td>
+                        <td>98–102</td>
+                        <td>80–84</td>
+                        <td>106–110</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 44</td>
+                        <td>103–107</td>
+                        <td>85–89</td>
+                        <td>111–115</td>
+                    </tr>
+                    <tr>
+                        <td>3XL / 46</td>
+                        <td>108–112</td>
+                        <td>90–94</td>
+                        <td>116–120</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Se sei tra due taglie, ti consigliamo di scegliere la taglia superiore.</p>
+        </div>
+
+        <!-- Donna: Pantaloni -->
+        <div class="gt-cat" id="gt-donna-pantaloni">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare vita e fianchi donna" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la vita</h3>
+                    <p>Misura la circonferenza della vita nel punto in cui normalmente indossi i pantaloni. Per i jeans
+                        a vita alta, misura appena sopra l'ombelico; per i modelli a vita bassa, misura sui fianchi.</p>
+                    <h3>2. Misura i fianchi</h3>
+                    <p>Misura la circonferenza della parte più larga dei fianchi, di solito circa 20 cm sotto la vita.
+                        Tieni il metro orizzontale e aderente ma non stretto.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                        <th>Lunghezza gamba (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 34</td>
+                        <td>60–64</td>
+                        <td>86–90</td>
+                        <td>74–76</td>
+                    </tr>
+                    <tr>
+                        <td>S / 36</td>
+                        <td>65–69</td>
+                        <td>91–95</td>
+                        <td>76–78</td>
+                    </tr>
+                    <tr>
+                        <td>M / 38</td>
+                        <td>70–74</td>
+                        <td>96–100</td>
+                        <td>78–80</td>
+                    </tr>
+                    <tr>
+                        <td>L / 40</td>
+                        <td>75–79</td>
+                        <td>101–105</td>
+                        <td>80–82</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 42</td>
+                        <td>80–84</td>
+                        <td>106–110</td>
+                        <td>80–82</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 44</td>
+                        <td>85–89</td>
+                        <td>111–115</td>
+                        <td>80–82</td>
+                    </tr>
+                    <tr>
+                        <td>3XL / 46</td>
+                        <td>90–94</td>
+                        <td>116–120</td>
+                        <td>80–82</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Se sei tra due taglie per vita e fianchi, segui sempre la misura più grande.</p>
+        </div>
+
+        <!-- Donna: Giacche -->
+        <div class="gt-cat" id="gt-donna-giacche">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per giacche donna" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura il busto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto, sopra l'abbigliamento leggero che
+                        indosseresti sotto la giacca.</p>
+                    <h3>2. Misura i fianchi</h3>
+                    <p>Per i capispalla, anche la misura dei fianchi è importante. Misura la circonferenza più larga, a
+                        circa 20 cm sotto la vita, per assicurarti che la giacca scenda bene.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia EU</th>
+                        <th>Busto (cm)</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 34</td>
+                        <td>78–82</td>
+                        <td>60–64</td>
+                        <td>86–90</td>
+                    </tr>
+                    <tr>
+                        <td>S / 36</td>
+                        <td>83–87</td>
+                        <td>65–69</td>
+                        <td>91–95</td>
+                    </tr>
+                    <tr>
+                        <td>M / 38</td>
+                        <td>88–92</td>
+                        <td>70–74</td>
+                        <td>96–100</td>
+                    </tr>
+                    <tr>
+                        <td>L / 40</td>
+                        <td>93–97</td>
+                        <td>75–79</td>
+                        <td>101–105</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 42</td>
+                        <td>98–102</td>
+                        <td>80–84</td>
+                        <td>106–110</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 44</td>
+                        <td>103–107</td>
+                        <td>85–89</td>
+                        <td>111–115</td>
+                    </tr>
+                    <tr>
+                        <td>3XL / 46</td>
+                        <td>108–112</td>
+                        <td>90–94</td>
+                        <td>116–120</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Per i capispalla imbottiti, considera di salire di una taglia per indossarli comodamente
+                sopra una felpa.</p>
+        </div>
+    </div>
+
+    <!-- ==============================
+       KIDS
+  =============================== -->
+    <div class="gt-section" id="gt-kids">
+        <div class="gt-subtabs">
+            <button class="gt-subtab active" onclick="gtSub('kids','top',this)">Top / T-shirt / Felpe</button>
+            <button class="gt-subtab" onclick="gtSub('kids','pantaloni',this)">Pantaloni / Jeans</button>
+            <button class="gt-subtab" onclick="gtSub('kids','giacche',this)">Giacche / Capispalla</button>
+        </div>
+
+        <!-- Kids: Top -->
+        <div class="gt-cat active" id="gt-kids-top">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare petto bambino" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura il petto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto del bambino, tenendolo orizzontale e
+                        aderente ma non stretto, con le braccia rilassate.</p>
+                    <h3>2. Misura l'altezza</h3>
+                    <p>Fai stare il bambino dritto contro un muro senza scarpe. Misura dall'alto della testa fino al
+                        pavimento. L'altezza è spesso il riferimento più pratico per l'abbigliamento bambino.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia / Età</th>
+                        <th>Altezza (cm)</th>
+                        <th>Petto (cm)</th>
+                        <th>Vita (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2 anni</td>
+                        <td>86–92</td>
+                        <td>52–54</td>
+                        <td>50–52</td>
+                    </tr>
+                    <tr>
+                        <td>3 anni</td>
+                        <td>92–98</td>
+                        <td>54–56</td>
+                        <td>52–54</td>
+                    </tr>
+                    <tr>
+                        <td>4 anni</td>
+                        <td>98–104</td>
+                        <td>56–58</td>
+                        <td>53–55</td>
+                    </tr>
+                    <tr>
+                        <td>5 anni</td>
+                        <td>104–110</td>
+                        <td>58–60</td>
+                        <td>54–56</td>
+                    </tr>
+                    <tr>
+                        <td>6 anni</td>
+                        <td>110–116</td>
+                        <td>60–63</td>
+                        <td>55–57</td>
+                    </tr>
+                    <tr>
+                        <td>7 anni</td>
+                        <td>116–122</td>
+                        <td>63–66</td>
+                        <td>56–58</td>
+                    </tr>
+                    <tr>
+                        <td>8 anni</td>
+                        <td>122–128</td>
+                        <td>66–69</td>
+                        <td>57–59</td>
+                    </tr>
+                    <tr>
+                        <td>9–10 anni</td>
+                        <td>128–140</td>
+                        <td>69–74</td>
+                        <td>59–62</td>
+                    </tr>
+                    <tr>
+                        <td>11–12 anni</td>
+                        <td>140–152</td>
+                        <td>74–80</td>
+                        <td>62–65</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">L'età è puramente indicativa. Misura sempre il bambino prima dell'acquisto, soprattutto
+                se è nella fase di crescita rapida.</p>
+        </div>
+
+        <!-- Kids: Pantaloni -->
+        <div class="gt-cat" id="gt-kids-pantaloni">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare vita e gamba bambino" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la vita</h3>
+                    <p>Misura la circonferenza della vita del bambino nel punto più stretto, appena sopra l'ombelico.
+                        Tieni il metro aderente ma non stretto.</p>
+                    <h3>2. Misura la lunghezza interna gamba</h3>
+                    <p>Misura dall'inguine fino alla caviglia lungo la parte interna della gamba. Per i bambini in
+                        crescita, considera di lasciare 2–3 cm di margine.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia / Età</th>
+                        <th>Altezza (cm)</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                        <th>Lunghezza gamba (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2 anni</td>
+                        <td>86–92</td>
+                        <td>50–52</td>
+                        <td>52–55</td>
+                        <td>33–36</td>
+                    </tr>
+                    <tr>
+                        <td>3 anni</td>
+                        <td>92–98</td>
+                        <td>52–54</td>
+                        <td>55–58</td>
+                        <td>36–39</td>
+                    </tr>
+                    <tr>
+                        <td>4 anni</td>
+                        <td>98–104</td>
+                        <td>53–55</td>
+                        <td>58–61</td>
+                        <td>39–43</td>
+                    </tr>
+                    <tr>
+                        <td>5 anni</td>
+                        <td>104–110</td>
+                        <td>54–56</td>
+                        <td>61–64</td>
+                        <td>43–47</td>
+                    </tr>
+                    <tr>
+                        <td>6 anni</td>
+                        <td>110–116</td>
+                        <td>55–57</td>
+                        <td>64–67</td>
+                        <td>47–51</td>
+                    </tr>
+                    <tr>
+                        <td>7 anni</td>
+                        <td>116–122</td>
+                        <td>56–58</td>
+                        <td>67–70</td>
+                        <td>51–55</td>
+                    </tr>
+                    <tr>
+                        <td>8 anni</td>
+                        <td>122–128</td>
+                        <td>57–59</td>
+                        <td>70–74</td>
+                        <td>55–59</td>
+                    </tr>
+                    <tr>
+                        <td>9–10 anni</td>
+                        <td>128–140</td>
+                        <td>59–62</td>
+                        <td>74–79</td>
+                        <td>59–65</td>
+                    </tr>
+                    <tr>
+                        <td>11–12 anni</td>
+                        <td>140–152</td>
+                        <td>62–65</td>
+                        <td>79–85</td>
+                        <td>65–71</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Per i bambini in crescita rapida, considera di scegliere la taglia superiore e regolare
+                con la cintura o il elastico interno.</p>
+        </div>
+
+        <!-- Kids: Giacche -->
+        <div class="gt-cat" id="gt-kids-giacche">
+            <div class="gt-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per giacche bambino" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura il petto</h3>
+                    <p>Passa il metro attorno alla parte più ampia del petto del bambino, sopra l'abbigliamento che
+                        indosserebbe sotto la giacca (ad es. una felpa leggera).</p>
+                    <h3>2. Misura l'altezza</h3>
+                    <p>Per i capispalla, l'altezza è spesso il riferimento più utile. Considera una taglia più grande
+                        per capispalla che devono durare più stagioni o essere indossati sopra abiti più spessi.</p>
+                </div>
+            </div>
+            <table class="gt-table">
+                <thead>
+                    <tr>
+                        <th>Taglia / Età</th>
+                        <th>Altezza (cm)</th>
+                        <th>Petto (cm)</th>
+                        <th>Vita (cm)</th>
+                        <th>Fianchi (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2 anni</td>
+                        <td>86–92</td>
+                        <td>52–54</td>
+                        <td>50–52</td>
+                        <td>52–55</td>
+                    </tr>
+                    <tr>
+                        <td>3 anni</td>
+                        <td>92–98</td>
+                        <td>54–56</td>
+                        <td>52–54</td>
+                        <td>55–58</td>
+                    </tr>
+                    <tr>
+                        <td>4 anni</td>
+                        <td>98–104</td>
+                        <td>56–58</td>
+                        <td>53–55</td>
+                        <td>58–61</td>
+                    </tr>
+                    <tr>
+                        <td>5 anni</td>
+                        <td>104–110</td>
+                        <td>58–60</td>
+                        <td>54–56</td>
+                        <td>61–64</td>
+                    </tr>
+                    <tr>
+                        <td>6 anni</td>
+                        <td>110–116</td>
+                        <td>60–63</td>
+                        <td>55–57</td>
+                        <td>64–67</td>
+                    </tr>
+                    <tr>
+                        <td>7 anni</td>
+                        <td>116–122</td>
+                        <td>63–66</td>
+                        <td>56–58</td>
+                        <td>67–70</td>
+                    </tr>
+                    <tr>
+                        <td>8 anni</td>
+                        <td>122–128</td>
+                        <td>66–69</td>
+                        <td>57–59</td>
+                        <td>70–74</td>
+                    </tr>
+                    <tr>
+                        <td>9–10 anni</td>
+                        <td>128–140</td>
+                        <td>69–74</td>
+                        <td>59–62</td>
+                        <td>74–79</td>
+                    </tr>
+                    <tr>
+                        <td>11–12 anni</td>
+                        <td>140–152</td>
+                        <td>74–80</td>
+                        <td>62–65</td>
+                        <td>79–85</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="gt-note">Per i capispalla imbottiti, considera di salire di una taglia per indossarli comodamente
+                sopra una felpa.</p>
+        </div>
+    </div>
+
+</div><!-- .gt-wrap -->
+
+<script>
+    function gtMain(id, btn) {
+        document.querySelectorAll('.gt-section').forEach(function (s) { s.classList.remove('active'); });
+        document.querySelectorAll('.gt-tab').forEach(function (t) { t.classList.remove('active'); });
+        document.getElementById('gt-' + id).classList.add('active');
+        btn.classList.add('active');
+    }
+    function gtSub(section, cat, btn) {
+        var parent = document.getElementById('gt-' + section);
+        parent.querySelectorAll('.gt-cat').forEach(function (c) { c.classList.remove('active'); });
+        parent.querySelectorAll('.gt-subtab').forEach(function (t) { t.classList.remove('active'); });
+        document.getElementById('gt-' + section + '-' + cat).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+<!-- /wp:html -->

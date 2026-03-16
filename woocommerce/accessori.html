@@ -1,0 +1,721 @@
+<!-- wp:html -->
+<style>
+    .ga-wrap * {
+        box-sizing: border-box;
+    }
+
+    .ga-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .ga-tab {
+        padding: 8px 24px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 14px;
+        color: #555;
+        background: #f5f5f5;
+        transition: all .15s;
+        font-family: inherit;
+    }
+
+    .ga-tab.active {
+        background: #111;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    .ga-section {
+        display: none;
+    }
+
+    .ga-section.active {
+        display: block;
+    }
+
+    .ga-subtabs {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .ga-subtab {
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 13px;
+        color: #555;
+        background: #fff;
+        transition: all .15s;
+        font-family: inherit;
+    }
+
+    .ga-subtab.active {
+        background: #111;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    .ga-cat {
+        display: none;
+    }
+
+    .ga-cat.active {
+        display: block;
+    }
+
+    .ga-how-to {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 28px;
+        align-items: start;
+    }
+
+    @media (max-width: 640px) {
+        .ga-how-to {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .ga-how-to h3 {
+        font-size: 15px;
+        margin: 0 0 6px;
+    }
+
+    .ga-how-to p {
+        font-size: 14px;
+        color: #555;
+        margin: 0 0 16px;
+        line-height: 1.6;
+    }
+
+    .ga-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .ga-table thead th {
+        background: #f5f5f5;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 13px;
+        color: #444;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .ga-table tbody td {
+        padding: 9px 14px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #222;
+    }
+
+    .ga-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ga-table tbody tr:hover td {
+        background: #fafafa;
+    }
+
+    .ga-note {
+        font-size: 13px;
+        color: #777;
+        margin-top: 10px;
+        font-style: italic;
+    }
+</style>
+
+<div class="ga-wrap">
+
+    <!-- MAIN TABS -->
+    <div class="ga-tabs">
+        <button class="ga-tab active" onclick="gaMain('uomo',this)">Uomo</button>
+        <button class="ga-tab" onclick="gaMain('donna',this)">Donna</button>
+        <button class="ga-tab" onclick="gaMain('kids',this)">Kids</button>
+    </div>
+
+    <!-- ==============================
+       UOMO
+  =============================== -->
+    <div class="ga-section active" id="ga-uomo">
+        <div class="ga-subtabs">
+            <button class="ga-subtab active" onclick="gaSub('uomo','cappelli',this)">Cappelli / Beanie</button>
+            <button class="ga-subtab" onclick="gaSub('uomo','cinture',this)">Cinture</button>
+            <button class="ga-subtab" onclick="gaSub('uomo','calze',this)">Calze</button>
+        </div>
+
+        <!-- Uomo: Cappelli -->
+        <div class="ga-cat active" id="ga-uomo-cappelli">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare la testa uomo" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura la circonferenza della testa</h3>
+                    <p>Posiziona il metro flessibile attorno alla testa, circa 1–2 cm sopra le orecchie e sulla fronte,
+                        passando per la parte più prominente della nuca. Tieni il metro orizzontale e ben aderente,
+                        senza stringere.</p>
+                    <h3>2. Scegli la taglia giusta</h3>
+                    <p>I beanie in maglia hanno generalmente più elasticità e tendono ad adattarsi a più misure. Per
+                        cappelli strutturati (snapback, fitted cap), la misura precisa è fondamentale.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia</th>
+                        <th>Circonferenza testa (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S / 55</td>
+                        <td>53–55</td>
+                    </tr>
+                    <tr>
+                        <td>M / 57</td>
+                        <td>55–57</td>
+                    </tr>
+                    <tr>
+                        <td>L / 59</td>
+                        <td>57–59</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 61</td>
+                        <td>59–61</td>
+                    </tr>
+                    <tr>
+                        <td>XXL / 63</td>
+                        <td>61–63</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">Per i beanie one-size, la misura consigliata è 55–61 cm. Se sei al limite superiore,
+                verifica che il modello abbia una buona percentuale di elastan.</p>
+        </div>
+
+        <!-- Uomo: Cinture -->
+        <div class="ga-cat" id="ga-uomo-cinture">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per la cintura uomo" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la vita dove indossi la cintura</h3>
+                    <p>Misura la circonferenza nel punto esatto dove indossi normalmente i pantaloni — per la maggior
+                        parte degli uomini è appena sotto l'ombelico. Usa un metro flessibile e tienilo aderente ma non
+                        stretto.</p>
+                    <h3>2. Aggiungi 5–8 cm</h3>
+                    <p>La taglia della cintura corrisponde alla lunghezza totale, non alla circonferenza vita. Aggiungi
+                        circa 5–8 cm alla tua misura vita per trovare la taglia corretta, così che la fibbia si chiuda
+                        sul foro centrale.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia cintura</th>
+                        <th>Vita (cm)</th>
+                        <th>Taglia pantaloni EU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>80 cm</td>
+                        <td>72–77</td>
+                        <td>44–46</td>
+                    </tr>
+                    <tr>
+                        <td>85 cm</td>
+                        <td>77–82</td>
+                        <td>46–48</td>
+                    </tr>
+                    <tr>
+                        <td>90 cm</td>
+                        <td>82–87</td>
+                        <td>48–50</td>
+                    </tr>
+                    <tr>
+                        <td>95 cm</td>
+                        <td>87–92</td>
+                        <td>50–52</td>
+                    </tr>
+                    <tr>
+                        <td>100 cm</td>
+                        <td>92–97</td>
+                        <td>52–54</td>
+                    </tr>
+                    <tr>
+                        <td>105 cm</td>
+                        <td>97–102</td>
+                        <td>54–56</td>
+                    </tr>
+                    <tr>
+                        <td>110 cm</td>
+                        <td>102–107</td>
+                        <td>56–58</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">In caso di dubbio tra due taglie, scegli sempre la taglia più grande: è più facile
+                accorciare una cintura che allungarla.</p>
+        </div>
+
+        <!-- Uomo: Calze -->
+        <div class="ga-cat" id="ga-uomo-calze">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src=""
+                            alt="Come misurare il piede per le calze uomo" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura la lunghezza del piede</h3>
+                    <p>Appoggia il piede su un foglio e segna il punto più lungo. Misura la distanza in centimetri. Le
+                        calze si misurano sempre in base alla lunghezza del piede, non alla taglia scarpa EU.</p>
+                    <h3>2. Verifica la composizione</h3>
+                    <p>Le calze con una buona percentuale di elastan (almeno 5%) si adattano meglio e durano di più. Se
+                        sei al limite tra due taglie, opta per la taglia superiore per un comfort ottimale.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia calza</th>
+                        <th>Taglia scarpa EU</th>
+                        <th>Lunghezza piede (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>39–41</td>
+                        <td>39–41</td>
+                        <td>25–26.5</td>
+                    </tr>
+                    <tr>
+                        <td>42–44</td>
+                        <td>42–44</td>
+                        <td>27–28.5</td>
+                    </tr>
+                    <tr>
+                        <td>45–47</td>
+                        <td>45–47</td>
+                        <td>29–30.5</td>
+                    </tr>
+                    <tr>
+                        <td>48–50</td>
+                        <td>48–50</td>
+                        <td>31–32.5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">Le taglie delle calze variano da produttore a produttore. Verifica sempre la tabella
+                specifica del brand.</p>
+        </div>
+    </div>
+
+    <!-- ==============================
+       DONNA
+  =============================== -->
+    <div class="ga-section" id="ga-donna">
+        <div class="ga-subtabs">
+            <button class="ga-subtab active" onclick="gaSub('donna','cappelli',this)">Cappelli / Beanie</button>
+            <button class="ga-subtab" onclick="gaSub('donna','cinture',this)">Cinture</button>
+            <button class="ga-subtab" onclick="gaSub('donna','calze',this)">Calze</button>
+        </div>
+
+        <!-- Donna: Cappelli -->
+        <div class="ga-cat active" id="ga-donna-cappelli">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare la testa donna" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura la circonferenza della testa</h3>
+                    <p>Posiziona il metro flessibile attorno alla testa, circa 1–2 cm sopra le orecchie e sulla fronte,
+                        passando per la parte più prominente della nuca. Tieni il metro orizzontale e ben aderente,
+                        senza stringere.</p>
+                    <h3>2. Considera l'acconciatura</h3>
+                    <p>Se indossi spesso il cappello con i capelli raccolti o con una coda, misura con i capelli nella
+                        posizione abituale. Per beanie da indossare sui capelli sciolti, considera di aggiungere 1–2 cm
+                        alla misura.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia</th>
+                        <th>Circonferenza testa (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XS / 53</td>
+                        <td>51–53</td>
+                    </tr>
+                    <tr>
+                        <td>S / 55</td>
+                        <td>53–55</td>
+                    </tr>
+                    <tr>
+                        <td>M / 57</td>
+                        <td>55–57</td>
+                    </tr>
+                    <tr>
+                        <td>L / 59</td>
+                        <td>57–59</td>
+                    </tr>
+                    <tr>
+                        <td>XL / 61</td>
+                        <td>59–61</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">La maggior parte dei cappelli donna one-size copre una circonferenza di 54–58 cm. Per i
+                cappelli con fascia regolabile, la taglia unica va generalmente bene per tutti.</p>
+        </div>
+
+        <!-- Donna: Cinture -->
+        <div class="ga-cat" id="ga-donna-cinture">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per la cintura donna" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura il punto dove indossi la cintura</h3>
+                    <p>A seconda dello stile — vita, fianchi o sopra i fianchi — misura la circonferenza nel punto
+                        esatto dove indosserai la cintura. Tieni il metro aderente ma non stretto.</p>
+                    <h3>2. Scegli la taglia corretta</h3>
+                    <p>Per le cinture a vita alta misura la vita naturale (il punto più stretto); per le cinture sui
+                        fianchi misura i fianchi. Aggiungi 5–8 cm alla tua misura per trovare la lunghezza cintura
+                        ideale.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia cintura</th>
+                        <th>Vita (cm)</th>
+                        <th>Taglia abbigliamento EU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>65 cm</td>
+                        <td>58–63</td>
+                        <td>34–36</td>
+                    </tr>
+                    <tr>
+                        <td>70 cm</td>
+                        <td>63–68</td>
+                        <td>36–38</td>
+                    </tr>
+                    <tr>
+                        <td>75 cm</td>
+                        <td>68–73</td>
+                        <td>38–40</td>
+                    </tr>
+                    <tr>
+                        <td>80 cm</td>
+                        <td>73–78</td>
+                        <td>40–42</td>
+                    </tr>
+                    <tr>
+                        <td>85 cm</td>
+                        <td>78–83</td>
+                        <td>42–44</td>
+                    </tr>
+                    <tr>
+                        <td>90 cm</td>
+                        <td>83–88</td>
+                        <td>44–46</td>
+                    </tr>
+                    <tr>
+                        <td>95 cm</td>
+                        <td>88–93</td>
+                        <td>46–48</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">Per le cinture elastiche o con fibbia ad ardiglione multiplo, la taglia è più flessibile:
+                scegli in base alla misura centrale della gamma.</p>
+        </div>
+
+        <!-- Donna: Calze -->
+        <div class="ga-cat" id="ga-donna-calze">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src=""
+                            alt="Come misurare il piede per le calze donna" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura la lunghezza del piede</h3>
+                    <p>Appoggia il piede su un foglio e segna il punto più lungo. Misura la distanza in centimetri. Le
+                        calze si misurano sempre in base alla lunghezza del piede, non alla taglia scarpa EU.</p>
+                    <h3>2. Verifica la composizione</h3>
+                    <p>Le calze con elastan si adattano meglio e mantengono la forma più a lungo. Per i collant e le
+                        calze a compressione, considera anche la misura del polpaccio per la vestibilità ottimale.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia calza</th>
+                        <th>Taglia scarpa EU</th>
+                        <th>Lunghezza piede (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>35–37</td>
+                        <td>35–37</td>
+                        <td>22–24</td>
+                    </tr>
+                    <tr>
+                        <td>38–40</td>
+                        <td>38–40</td>
+                        <td>24.5–26</td>
+                    </tr>
+                    <tr>
+                        <td>41–43</td>
+                        <td>41–43</td>
+                        <td>26.5–28</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">Le taglie delle calze variano da produttore a produttore. Verifica sempre la tabella
+                specifica del brand.</p>
+        </div>
+    </div>
+
+    <!-- ==============================
+       KIDS
+  =============================== -->
+    <div class="ga-section" id="ga-kids">
+        <div class="ga-subtabs">
+            <button class="ga-subtab active" onclick="gaSub('kids','cappelli',this)">Cappelli / Beanie</button>
+            <button class="ga-subtab" onclick="gaSub('kids','cinture',this)">Cinture</button>
+            <button class="ga-subtab" onclick="gaSub('kids','calze',this)">Calze</button>
+        </div>
+
+        <!-- Kids: Cappelli -->
+        <div class="ga-cat active" id="ga-kids-cappelli">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare la testa bambino" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la circonferenza della testa</h3>
+                    <p>Posiziona il metro flessibile attorno alla testa del bambino, circa 1–2 cm sopra le orecchie e
+                        sulla fronte, passando per la parte più prominente della nuca. Il bambino deve stare fermo e
+                        guardare dritto davanti a sé.</p>
+                    <h3>2. Scegli la taglia giusta</h3>
+                    <p>La testa dei bambini cresce rapidamente. Per i beanie, considera una taglia più grande in modo
+                        che duri almeno due stagioni. Per cappelli strutturati, attieniti alla misura precisa.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia / Età</th>
+                        <th>Circonferenza testa (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0–6 mesi</td>
+                        <td>40–43</td>
+                    </tr>
+                    <tr>
+                        <td>6–12 mesi</td>
+                        <td>43–46</td>
+                    </tr>
+                    <tr>
+                        <td>1–2 anni</td>
+                        <td>46–49</td>
+                    </tr>
+                    <tr>
+                        <td>2–4 anni</td>
+                        <td>49–51</td>
+                    </tr>
+                    <tr>
+                        <td>4–6 anni</td>
+                        <td>51–53</td>
+                    </tr>
+                    <tr>
+                        <td>6–8 anni</td>
+                        <td>53–54</td>
+                    </tr>
+                    <tr>
+                        <td>8–10 anni</td>
+                        <td>54–55</td>
+                    </tr>
+                    <tr>
+                        <td>10–12 anni</td>
+                        <td>55–56</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">L'età è puramente indicativa. Misura sempre la testa del bambino prima dell'acquisto.</p>
+        </div>
+
+        <!-- Kids: Cinture -->
+        <div class="ga-cat" id="ga-kids-cinture">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src="" alt="Come misurare per la cintura bambino" />
+                    </figure>
+                </div>
+                <div>
+                    <h3>1. Misura la vita del bambino</h3>
+                    <p>Misura la circonferenza della vita del bambino nel punto in cui normalmente indossa i pantaloni.
+                        Tieni il metro aderente ma non stretto, e lascia che il bambino respiri normalmente.</p>
+                    <h3>2. Scegli la lunghezza giusta</h3>
+                    <p>Le cinture per bambini sono spesso accorciabili o hanno più fori. Scegli la taglia più grande
+                        della fascia d'età per garantire maggiore durata e regolabilità man mano che il bambino cresce.
+                    </p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia / Età</th>
+                        <th>Vita (cm)</th>
+                        <th>Lunghezza cintura consigliata</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2–3 anni</td>
+                        <td>48–52</td>
+                        <td>55–60 cm</td>
+                    </tr>
+                    <tr>
+                        <td>3–4 anni</td>
+                        <td>50–54</td>
+                        <td>58–63 cm</td>
+                    </tr>
+                    <tr>
+                        <td>4–6 anni</td>
+                        <td>52–56</td>
+                        <td>60–65 cm</td>
+                    </tr>
+                    <tr>
+                        <td>6–8 anni</td>
+                        <td>54–58</td>
+                        <td>63–68 cm</td>
+                    </tr>
+                    <tr>
+                        <td>8–10 anni</td>
+                        <td>56–62</td>
+                        <td>65–72 cm</td>
+                    </tr>
+                    <tr>
+                        <td>10–12 anni</td>
+                        <td>60–66</td>
+                        <td>68–75 cm</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">Per i bambini in crescita rapida, le cinture con chiusura a clip o a cricchetto offrono
+                una regolazione più precisa rispetto alle cinture con fori tradizionali.</p>
+        </div>
+
+        <!-- Kids: Calze -->
+        <div class="ga-cat" id="ga-kids-calze">
+            <div class="ga-how-to">
+                <div>
+                    <figure class="wp-block-image size-full"><img src=""
+                            alt="Come misurare il piede per le calze bambino" /></figure>
+                </div>
+                <div>
+                    <h3>1. Misura la lunghezza del piede</h3>
+                    <p>Fai appoggiare il bambino su un foglio e segna il punto più lungo del piede. Misura la distanza
+                        in centimetri. È il metodo più preciso, soprattutto per i bambini piccoli.</p>
+                    <h3>2. Considera la crescita</h3>
+                    <p>Il piede dei bambini cresce velocemente. Puoi scegliere la taglia superiore se il bambino è al
+                        limite di una fascia, ma evita taglie troppo grandi che potrebbero causare sfregamenti o
+                        fastidi.</p>
+                </div>
+            </div>
+            <table class="ga-table">
+                <thead>
+                    <tr>
+                        <th>Taglia calza</th>
+                        <th>Taglia scarpa EU</th>
+                        <th>Lunghezza piede (cm)</th>
+                        <th>Età indicativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>16–18</td>
+                        <td>16–18</td>
+                        <td>10–11.5</td>
+                        <td>0–12 mesi</td>
+                    </tr>
+                    <tr>
+                        <td>19–22</td>
+                        <td>19–22</td>
+                        <td>12–14</td>
+                        <td>1–2 anni</td>
+                    </tr>
+                    <tr>
+                        <td>23–26</td>
+                        <td>23–26</td>
+                        <td>14.5–16.5</td>
+                        <td>3–5 anni</td>
+                    </tr>
+                    <tr>
+                        <td>27–30</td>
+                        <td>27–30</td>
+                        <td>17–19</td>
+                        <td>5–8 anni</td>
+                    </tr>
+                    <tr>
+                        <td>31–34</td>
+                        <td>31–34</td>
+                        <td>19.5–21.5</td>
+                        <td>8–11 anni</td>
+                    </tr>
+                    <tr>
+                        <td>35–38</td>
+                        <td>35–38</td>
+                        <td>22–24</td>
+                        <td>11–13 anni</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="ga-note">L'età è puramente indicativa. Misura sempre il piede del bambino prima dell'acquisto.</p>
+        </div>
+    </div>
+
+</div><!-- .ga-wrap -->
+
+<script>
+    function gaMain(id, btn) {
+        document.querySelectorAll('.ga-section').forEach(function (s) { s.classList.remove('active'); });
+        document.querySelectorAll('.ga-tab').forEach(function (t) { t.classList.remove('active'); });
+        document.getElementById('ga-' + id).classList.add('active');
+        btn.classList.add('active');
+    }
+    function gaSub(section, cat, btn) {
+        var parent = document.getElementById('ga-' + section);
+        parent.querySelectorAll('.ga-cat').forEach(function (c) { c.classList.remove('active'); });
+        parent.querySelectorAll('.ga-subtab').forEach(function (t) { t.classList.remove('active'); });
+        document.getElementById('ga-' + section + '-' + cat).classList.add('active');
+        btn.classList.add('active');
+    }
+</script>
+<!-- /wp:html -->
